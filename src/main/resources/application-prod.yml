@@ -1,0 +1,13 @@
+# druid 配置
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://mysql.sqlpub.com:3306/user_center_yeguo?characterEncoding=utf8&useSSL=true&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      username: aidjajd
+      password: PCmFV3o536eys711
+
+server:
+  servlet:
+    session:
+      timeout: 86400

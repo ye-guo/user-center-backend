@@ -1,0 +1,23 @@
+
+# druid 配置
+spring:
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql:///aidjajd?serverTimezone=UTC
+      username: root
+      password: 123456
+
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      logic-delete-field: isDelete
+      logic-not-delete-value: 0
+      logic-delete-value: 1
+server:
+  servlet:
+    session:
+      timeout: 86400
