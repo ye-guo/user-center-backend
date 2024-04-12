@@ -3,11 +3,20 @@ package com.aidjajd.usercenter.config;
 import com.aidjajd.usercenter.interceptor.GlobalPreInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("*")
+                .allowedMethods("*")
+                .allowCredentials(true); // 允许携带身份验证信息
+    }
 
     @Autowired
     private GlobalPreInterceptor globalPreInterceptor;
@@ -19,4 +28,5 @@ public class WebConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/user/login","/user/register",
                         "/user/logout"); // 不拦截登录路径
     }
+
 }
