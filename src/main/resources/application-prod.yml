@@ -3,9 +3,9 @@ spring:
   datasource:
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://sh-cynosdbmysql-grp-d36he312.sql.tencentcdb.com:24533/user_center_yeguo?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
-      username: root
-      password: CbzHrGz8gj83hBD
+      url: jdbc:mysql://mysql.sqlpub.com:3306/user_center_yeguo?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+      username: aidjajd
+      password: PCmFV3o536eys711
 
 server:
   servlet:
