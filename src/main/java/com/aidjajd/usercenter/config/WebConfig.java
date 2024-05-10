@@ -10,14 +10,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
-    @Override
-    public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**")
-                .allowedOriginPatterns("*")
-                .allowedMethods("*")
-                .allowCredentials(true); // 允许携带身份验证信息
-    }
-
     @Autowired
     private GlobalPreInterceptor globalPreInterceptor;
 
@@ -28,5 +20,13 @@ public class WebConfig implements WebMvcConfigurer {
                 .excludePathPatterns("/user/login","/user/register",
                         "/user/logout"); // 不拦截登录路径
     }
-
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowCredentials(true)
+                .allowedOriginPatterns("*")
+                .allowedMethods("*")
+                .allowedHeaders("*")
+                .maxAge(3600); // 允许携带身份验证信息
+    }
 }
